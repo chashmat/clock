@@ -292,6 +292,7 @@ function img11() {
     clock_face.style.backgroundSize = '352px';
 }
 
+// alerts of clock and background
 function clockBackground() {
     alert('Your clock face is sucssecfuly changed!!!')
 }
