@@ -292,6 +292,13 @@ function img11() {
     clock_face.style.backgroundSize = '352px';
 }
 
+function clockBackground() {
+    alert('Your clock face is sucssecfuly changed!!!')
+}
+function backgroundTheme() {
+    alert('Your background theme is sucssecfuly changed!!!')
+}
+
 // am input variables
 let am_bg_color = document.querySelector('#am-bg-color');
 let am_txt_color = document.querySelector('#am-txt-color');
