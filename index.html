@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBwMBU1TNyeRb1lJrW9XRa1RMyGSFgsFTAAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHw8HSaKEadbkx6b+6syv//Daxf/y3MX/8NCq/+3Oov2ZdlXSGAwGSgAAAAAAAAAAAAAAAAAAAAAAAAAAOyMVa9u6kfret5P/8uDS//z28f/99/L//fn1//z18P/ey8j/8cqg/9qvgPcrGA1pAAAAAAAAAAAAAAAAJxQKTNy4ifzgvqP/+vPs//ny7P//////xMTE/+bm5v/5+v//wMPg//br4f/vx6P/16Vy9xgMBUgAAAAAAgAACbGHXt/bso//9uzk//7+/v/Ly8v//f39/+rq6v/5+fn/xND2/8TGx//9+/n/+O/o/+q6iv+WZT/SAAAACC8YC1XgrXX/8eTY/+vj3P/p6en/+Pj4//7+/v//////+fr//8vY////////0NDQ/+/k2//x2sf/4qVo/hkLBUhvSSya4bOG//nz7v/u7e3/19fX///+/v///v7///7+/8rW/v/5+v7///7+//Dw7//9/f3/+PDp/+apbP9RLheKnGpBv+vIp//37eP/6Obi//bs6v/JmZr/2ri5/+Czof/Uy9j///v3///79//9+vb/5uPg//nx6f/ruYb/dEckq6JsQMTsyqf/9eXV/8fCu//99+///vnx//Pl3f/Oran/0ZR+///58P//9uz/+/Tq/9DKwv/15NP/6rWB/3dHIa6BUy+m6sKb//rs3f/+9en/+/Hm///06f/o5Oz/k6f3//Dd0//bt7H///Pl/+nczf/8797/+efU/+KdW/9bMhWMTCUOdeWvfP/45tP/49XF/760qv/67uH/6OLo/+jk6P//8uT/5sm//+XIv//Px7z/79zI//TYvP/biDz/KxMHVQ0EABbOkWD36MGc//fm1P/47d//5NzP/+zg0//98eL/+e3f//7y5P/Op6D/8NzQ//no1v/muI3/sGs35QEAAAcAAAAAVysRfOa2jP/x1rn/9+jY/9nMv//j3dP/ysO6/8jBuP/99On/4NTF/924rP/syab/36Nx/jUXBVoAAAAAAAAAAAMAAAOOSyOu6cCb/+3Nr//36t3/9ene//Xq4P/06+H/9+zi//Thz//syqn/46+E/1kpC4sAAAAAAAAAAAAAAAAAAAAADAQABG41EorZqYT57s+z/+7WwP/rzbL/6860//HZw//ryqv/y49j8kceBm0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMw4BJnY3D4aydU/Xw49u+MGNa/ajZDzNVSYHeg4FABgAAAAAAAAAAAAAAAAAAAAA/D8AAPAPAADgBwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAMADAADgDwAA+D8AAA==" rel="icon" type="image/x-icon" />
+    <title>Clock | Analog</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!-- clock -->
+    <div class="flex">
+        <div class="clock">
+            <div class="sec">
+                <div class="sc" id="sc"></div>
+            </div>
+            <div class="min">
+                <div class="mn" id="mn"></div>
+            </div>
+            <div class="hour">
+                <div class="hr" id="hr"></div>
+            </div>
+            <h5 class="am">AM</h5>
+            <h5 class="pm">PM</h5>
+        </div>
+        <div class="theme">
+            <!-- setting -->
+            <button class="theme-btn btn1" onclick="settings()">
+                <span></span>
+                <span></span>
+                <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+                settings
+            </button>
+        </div>
+    </div>
+    <!-- main theme -->
+    <div id="main-theme">
+        <button class="close-btn" onclick="closeBtn()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <div id="content">
+            <!-- header btn -->
+            <div id="header">
+                <div class="flex">
+                    <button onclick="handStyles()" class="hbtn">clock hand styles</button>
+                    <button onclick="faceStyles()" class="hbtn">clock face styles</button>
+                    <button onclick="amPmStyles()" class="hbtn">am pm styles</button>
+                    <button onclick="bgStyles()" class="hbtn">background themes</button>
+                </div>
+            </div>
+            <!-- clock hand styles -->
+            <div id="hand-styles">
+                <!-- seconds hand -->
+                <section id="seconed-hand" class="section fi">
+                    <h1><u>Seconed hand</u></h1>
+                    <div class="flex">
+                        <div>
+                            <label for="input-sec-color">hand color: </label>
+                            <input type="color" id="input-sec-color" value="#FF6766">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sec-stylish-border" onclick="secStylish()">
+                            <label>stylish seconed hand</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sec-shad" onclick="secShadow()">
+                            <label>hand shadow</label>
+                        </div>
+                    </div>
+                    <div id="sec-hide-show">
+                        <div style="text-align: center;">
+                            <h3><u>seconed hand shadow properties</u></h3>
+                        </div>
+                        <div class="flex mr-top" id="secshadow">
+                            <div>
+                                <label for="sec-shad-color">shadow color</label>
+                                <input type="color" id="sec-shad-color" value="#ffffff">
+                            </div>
+                            <div>
+                                <label for="sec-shad-blur">shadow blur</label>
+                                <input type="range" id="sec-shad-blur" value="0" onmousemove="secBlur()" onclick="secBlur()">
+                                <span><span id="sec-shad-blur-span">0</span> px</span>
+                            </div>
+                            <div>
+                                <label for="sec-shad-spread" class="small-mr-left">shadow spread</label>
+                                <input type="range" id="sec-shad-spread" value="0" onmousemove="secSpread()" onclick="secSpread()">
+                                <span><span id="sec-shad-spread-span">0</span> px</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- minutes hand -->
+                <section id="min-hand">
+                    <h1><u>minute hand</u></h1>
+                    <div class="flex">
+                        <div>
+                            <label for="input-min-color">hand color: </label>
+                            <input type="color" id="input-min-color" value="#b4b4b4">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="border-curve-min" onclick="minCurve()" checked>
+                            <label for="border-curve-min">curve border</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="min-stylish-border" onclick="minStylish()">
+                            <label>stylish minute hand</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="shad-min" onclick="minShadow()">
+                            <label>hand shadow</label>
+                        </div>
+                    </div>
+                    <div id="min-hide-show">
+                        <div style="text-align: center;">
+                            <h3><u>hand shadow properties</u></h3>
+                        </div>
+                        <div class="flex mr-top">
+                            <div>
+                                <label for="min-shad-color">shadow color</label>
+                                <input type="color" id="min-shad-color" value="#ffffff">
+                            </div>
+                            <div>
+                                <label for="min-shad-blur">shadow blur</label>
+                                <input type="range" id="min-shad-blur" value="0" onmousemove="minBlur()" onclick="minBlur()">
+                                <span><span id="min-shad-blur-span">0</span> px</span>
+                            </div>
+                            <div>
+                                <label for="min-shad-spread" class="small-mr-left">shadow spread</label>
+                                <input type="range" id="min-shad-spread" value="0" onmousemove="minSpread()" onclick="minSpread()">
+                                <span><span id="min-shad-spread-span">0</span> px</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- hour hand -->
+                <section id="hour-hand" class="section la">
+                    <h1><u>hour hand</u></h1>
+                    <div class="flex">
+                        <div>
+                            <label for="input-hour-color">hand color: </label>
+                            <input type="color" id="input-hour-color" value="#848484">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="border-curve-hour" checked onclick="hrCurve()">
+                            <label for="border-curve-hour">curve border</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hr-stylish-border" onclick="hrStylish()">
+                            <label>stylish hour hand</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="shad-hr" onclick="hrShadow()">
+                            <label>hand shadow</label>
+                        </div>
+                    </div>
+                    <div id="hr-hide-show">
+                        <div style="text-align: center;">
+                            <h3><u>hand shadow properties</u></h3>
+                        </div>
+                        <div class="flex mr-top">
+                            <div>
+                                <label for="hr-shad-color">shadow color</label>
+                                <input type="color" id="hr-shad-color" value="#ffffff">
+                            </div>
+                            <div>
+                                <label for="hr-shad-blur">shadow blur</label>
+                                <input type="range" id="hr-shad-blur" value="0" onmousemove="hrBlur()" onclick="hrBlur()">
+                                <span><span id="hr-shad-blur-span">0</span> px</span>
+                            </div>
+                            <div>
+                                <label for="hr-shad-spread" class="small-mr-left">shadow spread</label>
+                                <input type="range" id="hr-shad-spread" value="0" onmousemove="hrSpread()" onclick="hrSpread()">
+                                <span><span id="hr-shad-spread-span">0</span> px</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- clock face styles -->
+            <div id="plate-styles">
+                <h1><u>clock face</u></h1>
+                <!-- clock images -->
+                <div class="img">
+                    <img src="clock.jpg" alt="clock-face-1" onclick="img1()">
+                    <img src="Clock-plate-1.png" alt="clock-face-2" onclick="img2()">
+                    <img src="Clock-plate-2.png" alt="clock-face-3" onclick="img3()">
+                    <img src="Clock-plate-3.png" alt="clock-face-4" onclick="img4()">
+                    <img src="Clock-plate-4.png" alt="clock-face-5" onclick="img5()">
+                    <img src="Clock-plate-5.png" alt="clock-face-6" onclick="img6()">
+                    <img src="Clock-plate-6.png" alt="clock-face-7" onclick="img7()">
+                    <img src="Clock-plate-7.png" alt="clock-face-8" onclick="img8()">
+                    <img src="Clock-plate-8.png" alt="clock-face-9" onclick="img9()">
+                    <img src="Clock-plate-9.png" alt="clock-face-10" onclick="img10()">
+                    <img src="Clock-plate-10.png" alt="clock-face-11" onclick="img11()">
+                </div>
+            </div>
+            <!-- am pm styles -->
+            <div id="am-pm-styles">
+                <!-- am styles -->
+                <section id="am-style">
+                    <h1><u>AM styles</u></h1>
+                    <div class="flex">
+                        <div>
+                            <label for="am-bg-color">AM background color: </label>
+                            <input type="color" id="am-bg-color" value="#fe006b">
+                        </div>
+                        <div>
+                            <label for="am-txt-color">AM text color: </label>
+                            <input type="color" id="am-txt-color" value="#ffffff">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="am-curve" onclick="amCurve()" checked>
+                            <label>border curve</label>
+                        </div>
+                    </div>
+                </section>
+                <!-- pm styles -->
+                <section id="pm-style">
+                    <h1><u>PM styles</u></h1>
+                    <div class="flex">
+                        <div>
+                            <label for="pm-bg-color">PM background color: </label>
+                            <input type="color" id="pm-bg-color" value="#2297f6">
+                        </div>
+                        <div>
+                            <label for="pm-txt-color">PM text color: </label>
+                            <input type="color" id="pm-txt-color" value="#ffffff">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="pm-curve" checked onclick="pmCurve()">
+                            <label>border curve</label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- background styles -->
+            <div id="bg-styles">
+                <div class="flex mr-top">
+                    <a href="#">
+                        <div class="blue1 si lg" onclick="blue()"> <div class="blue2 si m"> <div class="blue3 si s"></div> </div> <p class="small">blue</p> </div>
+                    </a>
+                    <a href="#">
+                        <div class="red1 si lg" onclick="red()"> <div class="red2 si m"> <div class="red3 si s"> </div> </div> <p style="margin-left: 15px;">red</p> </div>
+                    </a>
+                    <a href="#">
+                        <div class="green1 si lg" onclick="green()"> <div class="green2 si m"> <div class="green3 si s"> </div> </div> <p class="big">green</p> </div>
+                    </a>
+                    <a href="#">
+                        <div class="yellow1 si lg" onclick="yellow()"> <div class="yellow2 si m"> <div class="yellow3 si s"> </div> </div> <p>yellow</p> </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- apply and default btn -->
+        <div class="flex">
+            <button onclick="apply()" class="button1">Apply Styles</button>
+            <button class="button1" onclick="setDefault()">set to default</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
